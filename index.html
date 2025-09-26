@@ -14,16 +14,19 @@
     <!-- HERO SECTION -->
     <header
       id="hero"
-      class="h-screen bg-[url('./images/bg-1.jpg')] flex flex-col w-full bg-cover bg-center bg-no-repeat mb-30"
+      class="relative h-screen flex flex-col w-full bg-[url('./images/bg-1.jpg')] bg-cover bg-center bg-no-repeat"
     >
+      <!-- Overlay (dark + blur) -->
+      <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
       <!-- HERO CONTENT -->
       <div
-        class="flex flex-col md:flex-row flex-1 items-center text-center px-4"
+        class="relative z-10 flex flex-col md:flex-row flex-1 items-center text-center px-4"
       >
         <div class="w-full space-y-6">
           <h1 class="text-white text-5xl md:text-7xl">
             Welcome to <span class="font-bold text-purple-600">Turnaj</span>,
-            Experience Football Fantansy Like Never Before.
+            Experience Football Fantasy Like Never Before.
           </h1>
           <p class="text-white text-lg md:text-2xl font-bold">
             Your Ultimate Destination for Football Tournaments and Events.
@@ -108,6 +111,216 @@
             muted
             class="rounded-xl shadow-lg max-w-md w-full"
           ></video>
+        </div>
+      </section>
+
+      <!-- BEST MOMENTS SECTION -->
+      <section class="py-12 px-4 bg-gray-900" id="best-moments">
+        <div class="max-w-7xl mx-auto">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-white mb-6 text-center"
+          >
+            Best Football Moments 2025
+          </h2>
+
+          <!-- Video Grid -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
+          >
+            <!-- Video Card — Repeat 5 to 7 times -->
+            <div
+              class="aspect-video bg-black rounded-xl overflow-hidden shadow-lg"
+            >
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/KwqzoSWrMYQ?rel=0"
+                title="Highlight 1"
+                frameborder="0"
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+            <div
+              class="aspect-video bg-black rounded-xl overflow-hidden shadow-lg"
+            >
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/VIDEO_ID2"
+                title="Highlight 2"
+                frameborder="0"
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+            <div
+              class="aspect-video bg-black rounded-xl overflow-hidden shadow-lg"
+            >
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/VIDEO_ID3"
+                title="Highlight 3"
+                frameborder="0"
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+            <div
+              class="aspect-video bg-black rounded-xl overflow-hidden shadow-lg"
+            >
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/VIDEO_ID4"
+                title="Highlight 4"
+                frameborder="0"
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+            <div
+              class="aspect-video bg-black rounded-xl overflow-hidden shadow-lg"
+            >
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/VIDEO_ID5"
+                title="Highlight 5"
+                frameborder="0"
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+            <!-- You can add 6th, 7th similarly -->
+          </div>
+
+          <!-- More Button -->
+          <div class="text-center mt-6">
+            <a
+              href="moments.html"
+              class="inline-block bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105"
+            >
+              See More Moments
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERVIEWS SECTION -->
+      <section class="py-12 px-4 bg-gray-800" id="interviews">
+        <div class="max-w-7xl mx-auto">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-white mb-6 text-center"
+          >
+            Player Interviews
+          </h2>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
+          >
+            <!-- 5 to 7 interview videos -->
+            <div
+              class="aspect-video bg-black rounded-xl overflow-hidden shadow-lg"
+            >
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/INTERVIEW_ID1"
+                title="Interview 1"
+                frameborder="0"
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+            <!-- Repeat with other IDs -->
+          </div>
+
+          <div class="text-center mt-6">
+            <a
+              href="interviews.html"
+              class="inline-block bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105"
+            >
+              More Interviews
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRANSFERS SECTION -->
+      <section class="py-12 px-4 bg-gray-900" id="transfers">
+        <div class="max-w-7xl mx-auto">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-white mb-6 text-center"
+          >
+            Trade & Transfer News
+          </h2>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
+          >
+            <div
+              class="aspect-video bg-black rounded-xl overflow-hidden shadow-lg"
+            >
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/TRANSFER_ID1"
+                title="Transfer News 1"
+                frameborder="0"
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+            <!-- more videos... -->
+          </div>
+
+          <div class="text-center mt-6">
+            <a
+              href="transfers.html"
+              class="inline-block bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105"
+            >
+              More Transfers
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-gray-50 py-12 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6">
+            5-Aside & 11-Aside
+          </h2>
+          <p class="text-gray-600 mb-8">
+            Fantasy football can be played in different formats. Here's the
+            difference between 5-aside and 11-aside football:
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- 5-Aside Card -->
+            <div
+              class="bg-white rounded-2xl shadow p-6 hover:shadow-lg transition"
+            >
+              <h3 class="text-2xl font-semibold text-blue-600 mb-3">
+                ⚽ 5-Aside Football
+              </h3>
+              <ul class="text-gray-700 space-y-2 text-left">
+                <li>✅ 5 players per team (including goalkeeper)</li>
+                <li>✅ Played on a small pitch (indoor/outdoor)</li>
+                <li>✅ Fast-paced and high-scoring</li>
+                <li>✅ Shorter match time (20-30 mins per half)</li>
+              </ul>
+            </div>
+
+            <!-- 11-Aside Card -->
+            <div
+              class="bg-white rounded-2xl shadow p-6 hover:shadow-lg transition"
+            >
+              <h3 class="text-2xl font-semibold text-green-600 mb-3">
+                🏟️ 11-Aside Football
+              </h3>
+              <ul class="text-gray-700 space-y-2 text-left">
+                <li>✅ 11 players per team (including goalkeeper)</li>
+                <li>✅ Full-size pitch (standard football)</li>
+                <li>✅ Used in professional leagues & tournaments</li>
+                <li>✅ 90-minute matches (45 mins per half)</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </main>
