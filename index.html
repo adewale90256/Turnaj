@@ -11,8 +11,7 @@
   <body>
     <div id="navbar"></div>
 
-    <!-- HERO SECTION -->
-    <header
+   <header
       id="hero"
       class="relative h-screen flex flex-col w-full bg-[url('./images/bg-1.jpg')] bg-cover bg-center bg-no-repeat"
     >
@@ -21,10 +20,10 @@
 
       <!-- HERO CONTENT -->
       <div
-        class="relative z-10 flex flex-col md:flex-row flex-1 items-center text-center px-4"
+        class="relative z-10 flex flex-col flex-1 items-center justify-center gap-5 text-center px-4"
       >
         <div class="w-full space-y-6">
-          <h1 class="text-white text-5xl md:text-7xl">
+          <h1 class="text-white text-4xl md:text-5xl">
             Welcome to <span class="font-bold text-purple-600">Turnaj</span>,
             Experience Football Fantasy Like Never Before.
           </h1>
@@ -35,32 +34,106 @@
           <!-- Get Started Button -->
           <a
             href="login.html"
-            class="inline-block bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105"
+            class="inline-block bg-transparent border border-white text-white text-lg font-semibold px-6 py-2 rounded-xl transition-transform transform hover:scale-105"
           >
             Get Started
           </a>
         </div>
-
+        <!-- Sponsors Logos -->
         <div class="w-full mt-10 md:mt-0">
-          <div class="grid grid-cols-2 gap-10 justify-items-center">
-            <img src="./images/EA-sport.png" class="w-[100px] md:w-[120px]" />
+          <div
+            class="grid grid-cols-2 gap-10 justify-items-center items-center md:grid-cols-3 lg:grid-cols-4"
+          >
+            <img
+              src="./images/EA-sport.png"
+              class="w-[100px] md:w-[120px] hover:scale-105 transition-all duration-300 animate-pulse"
+            />
             <img
               src="./images/CocaCola_2526_Partner.webp"
-              class="w-[100px] md:w-[120px]"
+              class="w-[100px] md:w-[120px] hover:scale-105 transition-all duration-300 animate-pulse"
             />
-            <img src="./images/guinness.svg" class="w-[100px] md:w-[120px]" />
+            <img
+              src="./images/guinness.svg"
+              class="w-[100px] md:w-[120px] hover:scale-y-105 transition-all duration-300 animate-pulse"
+            />
             <img
               src="./images/puma_partner.png"
-              class="w-[100px] md:w-[120px]"
+              class="w-[100px] md:w-[120px] hover:scale-105 transition-all duration-300 animate-pulse"
+            />
+            <img
+              src="./images/football-man.png"
+              class="w-[100px] md:w-[120px] hover:scale-105 transition-all duration-300 animate-pulse"
+            />
+            <img
+              src="./images/Barclays_Sponsor.webp"
+              class="w-[100px] md:w-[120px] hover:scale-105 transition-all duration-300 animate-pulse"
+            />
+            <img
+              src="./images/avery-dennison.svg"
+              class="w-[100px] md:w-[120px] hover:scale-105 transition-all duration-300 animate-pulse"
+            />
+            <img
+              src="./images/ADB.webp"
+              class="w-[100px] md:w-[120px] hover:scale-105 transition-all duration-300 animate-pulse"
             />
           </div>
         </div>
       </div>
     </header>
-
     <main
-      class="px-6 py-12 space-y-12 bg-gradient-to-b from-purple-900 to-purple-500"
+          class="px-6 py-12 space-y-12 bg-gray-100 dark:bg-gray-900 relative overflow-hidden"
     >
+
+         <div
+        class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent dark:from-white/5 dark:to-transparent pointer-events-none"
+      ></div>
+
+      <section>
+        <div class="flex justify-between items-center">
+          <img
+            src="./images/soccer-bets-bg.png"
+            alt="Football Field"
+            class="hidden md:block mx-auto mb-8 w-full md:w-[700px] md:h-[300px] max-w-4xl rounded-xl shadow-lg"
+          />
+
+          <div>
+            <p class="text-green-600">A Next-Level Sport fantasy</p>
+            <h3 class="text-white text-4xl">A Revolution in sports fantasy.</h3>
+            <p class="text-gray-300 mt-4 max-w-3xl">
+              Turnaj is a user-friendly, decentralized, fantasy sport platform
+              that brings fans closer to the action.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-10 flex justify-around items-center flex-wrap gap-6">
+          <div
+            class="border-2 border-gray-600 rounded-lg p-2 hover:scale-105 transition duration-300 hover:border-green-400"
+          >
+            <img src="./images/Ecrow.png" alt="" />
+            <p class="text-white text-center">Escrow</p>
+          </div>
+          <div
+            class="border-2 border-gray-600 rounded-lg p-2 hover:scale-105 transition duration-300 hover:border-green-400"
+          >
+            <img src="./images/no-limit.png" alt="" />
+            <p class="text-white text-center">No Limit</p>
+          </div>
+          <div
+            class="border-2 border-gray-600 rounded-lg p-2 hover:scale-105 transition duration-300 hover:border-green-400"
+          >
+            <img src="./images/decentralize.png" alt="" />
+            <p class="text-white text-center">Decentralized</p>
+          </div>
+          <div
+            class="border-2 border-gray-600 rounded-lg p-2 hover:scale-105 transition duration-300 hover:border-green-400"
+          >
+            <img src="./images/community-f.png" alt="" />
+            <p class="text-white text-center">Community</p>
+          </div>
+        </div>
+      </section>
+      
       <!-- Champions League Section -->
       <section class="grid md:grid-cols-2 gap-6 items-center">
         <!-- Text Content -->
@@ -118,7 +191,7 @@
       <section class="py-12 px-4 bg-gray-900" id="best-moments">
         <div class="max-w-7xl mx-auto">
           <h2
-            class="text-3xl md:text-4xl font-bold text-white mb-6 text-center"
+            class="text-3xl md:text-4xl text-white mb-6 text-center"
           >
             Best Football Moments 2025
           </h2>
@@ -192,10 +265,10 @@
           </div>
 
           <!-- More Button -->
-          <div class="text-center mt-6">
+         <div class="text-center mt-6">
             <a
               href="moments.html"
-              class="inline-block bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105"
+              class="relative inline-block px-6 py-3 rounded-xl overflow-hidden text-white border-2 border-transparent transition-transform transform hover:scale-105 before:absolute before:inset-0 before:rounded-xl before:border-2 before:border-gray-600 before:scale-0 before:transition-transform before:duration-500 hover:before:scale-100"
             >
               See More Moments
             </a>
@@ -207,7 +280,7 @@
       <section class="py-12 px-4 bg-gray-800" id="interviews">
         <div class="max-w-7xl mx-auto">
           <h2
-            class="text-3xl md:text-4xl font-bold text-white mb-6 text-center"
+            class="text-3xl md:text-4xl  text-white mb-6 text-center"
           >
             Player Interviews
           </h2>
@@ -282,10 +355,10 @@
             </div>
           </div>
 
-          <div class="text-center mt-6">
+         <div class="text-center mt-6">
             <a
-              href="interviews.html"
-              class="inline-block bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105"
+              href="moments.html"
+              class="relative inline-block px-6 py-3 rounded-xl overflow-hidden text-white border-2 border-transparent transition-transform transform hover:scale-105 before:absolute before:inset-0 before:rounded-xl before:border-2 before:border-gray-600 before:scale-0 before:transition-transform before:duration-500 hover:before:scale-100"
             >
               More Interviews
             </a>
@@ -297,7 +370,7 @@
       <section class="py-12 px-4 bg-gray-900" id="transfers">
         <div class="max-w-7xl mx-auto">
           <h2
-            class="text-3xl md:text-4xl font-bold text-white mb-6 text-center"
+            class="text-3xl md:text-4xl  text-white mb-6 text-center"
           >
             Trade & Transfer News
           </h2>
@@ -372,10 +445,10 @@
             </div>
           </div>
 
-          <div class="text-center mt-6">
+         <div class="text-center mt-6">
             <a
-              href="transfers.html"
-              class="inline-block bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105"
+              href="moments.html"
+              class="relative inline-block px-6 py-3 rounded-xl overflow-hidden text-white border-2 border-transparent transition-transform transform hover:scale-105 before:absolute before:inset-0 before:rounded-xl before:border-2 before:border-gray-600 before:scale-0 before:transition-transform before:duration-500 hover:before:scale-100"
             >
               More Transfers
             </a>
@@ -383,12 +456,17 @@
         </div>
       </section>
 
-      <section class="bg-gray-50 py-12 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-3xl font-bold text-gray-800 mb-6">
+      <section
+        class="relative py-12 px-5 bg-[url('./images/pitch.jpg')] bg-cover bg-center bg-no-repeat rounded-2xl overflow-hidden"
+      >
+        <!-- Dark blurred overlay -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+        <div class="relative max-w-4xl mx-auto text-center text-white">
+          <h2 class="text-3xl font-bold text-blue-400 mb-6 drop-shadow-lg">
             5-Aside & 11-Aside
           </h2>
-          <p class="text-gray-600 mb-8">
+          <p class="text-gray-200 mb-8">
             Fantasy football can be played in different formats. Here's the
             difference between 5-aside and 11-aside football:
           </p>
@@ -396,12 +474,12 @@
           <div class="grid md:grid-cols-2 gap-6">
             <!-- 5-Aside Card -->
             <div
-              class="bg-white rounded-2xl shadow p-6 hover:shadow-lg transition"
+              class="bg-white/90 backdrop-blur-md rounded-2xl shadow p-6 hover:shadow-lg transition text-gray-900"
             >
               <h3 class="text-2xl font-semibold text-blue-600 mb-3">
                 ⚽ 5-Aside Football
               </h3>
-              <ul class="text-gray-700 space-y-2 text-left">
+              <ul class="space-y-2 text-left">
                 <li>✅ 5 players per team (including goalkeeper)</li>
                 <li>✅ Played on a small pitch (indoor/outdoor)</li>
                 <li>✅ Fast-paced and high-scoring</li>
@@ -411,12 +489,12 @@
 
             <!-- 11-Aside Card -->
             <div
-              class="bg-white rounded-2xl shadow p-6 hover:shadow-lg transition"
+              class="bg-white/90 backdrop-blur-md rounded-2xl shadow p-6 hover:shadow-lg transition text-gray-900"
             >
               <h3 class="text-2xl font-semibold text-green-600 mb-3">
                 🏟️ 11-Aside Football
               </h3>
-              <ul class="text-gray-700 space-y-2 text-left">
+              <ul class="space-y-2 text-left">
                 <li>✅ 11 players per team (including goalkeeper)</li>
                 <li>✅ Full-size pitch (standard football)</li>
                 <li>✅ Used in professional leagues & tournaments</li>
@@ -425,7 +503,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section
     </main>
 
     <section class="bg-gradient-to-b from-purple-500 to-purple-600 py-10 px-4">
@@ -515,9 +593,10 @@
     <script>
       lucide.createIcons();
     </script>
-    <script src="./script.js" type="module"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
+
 
 
 
