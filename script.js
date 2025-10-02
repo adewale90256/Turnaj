@@ -112,6 +112,13 @@ document.addEventListener("DOMContentLoaded", () => {
       "./images/ronaldo.webp",
       "./images/arsenal.jpg",
     ];
+
+    // Preload images
+  images.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+    
     let index = 0;
     setInterval(() => {
       index = (index + 1) % images.length;
@@ -139,3 +146,4 @@ function toggleSubmenu(id) {
   const submenu = document.getElementById(id);
   if (submenu) submenu.classList.toggle("hidden");
 }
+
