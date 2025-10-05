@@ -1,104 +1,102 @@
+// script.js
 document.addEventListener("DOMContentLoaded", () => {
-  // ✅ Load Navbar dynamically
-  fetch("navbar.html")
-    .then((res) => res.text())
-    .then((data) => {
-      document.getElementById("navbar").innerHTML = data;
-      if (window.lucide) lucide.createIcons();
+  const navbarContainer = document.getElementById("navbar");
 
-      // ✅ Attach Sidebar Toggle AFTER navbar loads
-      const sidebar = document.getElementById("sidebar");
-      const menuBtn = document.getElementById("menuBtn");
-      const closeSidebar = document.getElementById("closeSidebar");
+  if (navbarContainer) {
+    // ✅ Load Navbar Dynamically
+    fetch("navbar.html")
+      .then((res) => res.text())
+      .then((data) => {
+        navbarContainer.innerHTML = data;
+        if (window.lucide) lucide.createIcons();
 
-      if (menuBtn && sidebar) {
-        menuBtn.addEventListener("click", () => {
-          sidebar.classList.remove("-translate-x-full");
-        });
-      }
+        // ✅ Attach Sidebar Toggle AFTER navbar loads
+        const sidebar = document.getElementById("sidebar");
+        const menuBtn = document.getElementById("menuBtn");
+        const closeSidebar = document.getElementById("closeSidebar");
 
-      if (closeSidebar && sidebar) {
-        closeSidebar.addEventListener("click", () => {
-          sidebar.classList.add("-translate-x-full");
-        });
-      }
+        if (menuBtn && sidebar) {
+          menuBtn.addEventListener("click", () => {
+            sidebar.classList.remove("-translate-x-full");
+          });
+        }
 
-      // ✅ Attach Dropdown Logic AFTER navbar loads
-      const blogsMenu = document.getElementById("blogsMenu");
-      const blogsDropdown = document.getElementById("blogsDropdown");
-      const blogSubmenuBtn = document.getElementById("blogSubmenuBtn");
-      const blogSubmenu = document.getElementById("blogSubmenu");
+        if (closeSidebar && sidebar) {
+          closeSidebar.addEventListener("click", () => {
+            sidebar.classList.add("-translate-x-full");
+          });
+        }
 
-      let dropdownTimeout, submenuTimeout;
+        // ✅ Dropdown Logic AFTER navbar loads
+        const blogsMenu = document.getElementById("blogsMenu");
+        const blogsDropdown = document.getElementById("blogsDropdown");
+        const blogSubmenuBtn = document.getElementById("blogSubmenuBtn");
+        const blogSubmenu = document.getElementById("blogSubmenu");
 
-      function showDropdown() {
-        clearTimeout(dropdownTimeout);
-        blogsDropdown.classList.remove("hidden");
-        setTimeout(
-          () => blogsDropdown.classList.remove("opacity-0", "translate-y-2"),
-          10
-        );
-      }
+        let dropdownTimeout, submenuTimeout;
 
-      function hideDropdown() {
-        dropdownTimeout = setTimeout(() => {
-          blogsDropdown.classList.add("opacity-0", "translate-y-2");
-          setTimeout(() => blogsDropdown.classList.add("hidden"), 200);
-        }, 150);
-      }
+        function showDropdown() {
+          clearTimeout(dropdownTimeout);
+          blogsDropdown.classList.remove("hidden");
+          setTimeout(
+            () => blogsDropdown.classList.remove("opacity-0", "translate-y-2"),
+            10
+          );
+        }
 
-      function showSubmenu() {
-        clearTimeout(submenuTimeout);
-        blogSubmenu.classList.remove("hidden");
-        setTimeout(
-          () => blogSubmenu.classList.remove("opacity-0", "translate-x-2"),
-          10
-        );
-      }
+        function hideDropdown() {
+          dropdownTimeout = setTimeout(() => {
+            blogsDropdown.classList.add("opacity-0", "translate-y-2");
+            setTimeout(() => blogsDropdown.classList.add("hidden"), 200);
+          }, 150);
+        }
 
-      function hideSubmenu() {
-        submenuTimeout = setTimeout(() => {
-          blogSubmenu.classList.add("opacity-0", "translate-x-2");
-          setTimeout(() => blogSubmenu.classList.add("hidden"), 200);
-        }, 150);
-      }
+        function showSubmenu() {
+          clearTimeout(submenuTimeout);
+          blogSubmenu.classList.remove("hidden");
+          setTimeout(
+            () => blogSubmenu.classList.remove("opacity-0", "translate-x-2"),
+            10
+          );
+        }
 
-      if (blogsMenu && blogsDropdown) {
-        blogsMenu.addEventListener("mouseenter", showDropdown);
-        blogsMenu.addEventListener("mouseleave", hideDropdown);
-        blogsDropdown.addEventListener("mouseenter", showDropdown);
-        blogsDropdown.addEventListener("mouseleave", hideDropdown);
-      }
+        function hideSubmenu() {
+          submenuTimeout = setTimeout(() => {
+            blogSubmenu.classList.add("opacity-0", "translate-x-2");
+            setTimeout(() => blogSubmenu.classList.add("hidden"), 200);
+          }, 150);
+        }
 
-      if (blogSubmenuBtn && blogSubmenu) {
-        blogSubmenuBtn.addEventListener("mouseenter", showSubmenu);
-        blogSubmenuBtn.addEventListener("mouseleave", hideSubmenu);
-        blogSubmenu.addEventListener("mouseenter", showSubmenu);
-        blogSubmenu.addEventListener("mouseleave", hideSubmenu);
-      }
+        if (blogsMenu && blogsDropdown) {
+          blogsMenu.addEventListener("mouseenter", showDropdown);
+          blogsMenu.addEventListener("mouseleave", hideDropdown);
+          blogsDropdown.addEventListener("mouseenter", showDropdown);
+          blogsDropdown.addEventListener("mouseleave", hideDropdown);
+        }
 
-      // ✅ Show Username & Email if available
-      const displayUsername = document.getElementById("displayUsername");
-      const displayEmail = document.getElementById("displayEmail");
-      const logoutBtn = document.getElementById("logoutBtn");
+        if (blogSubmenuBtn && blogSubmenu) {
+          blogSubmenuBtn.addEventListener("mouseenter", showSubmenu);
+          blogSubmenuBtn.addEventListener("mouseleave", hideSubmenu);
+          blogSubmenu.addEventListener("mouseenter", showSubmenu);
+          blogSubmenu.addEventListener("mouseleave", hideSubmenu);
+        }
 
-      const userData = JSON.parse(localStorage.getItem("userData"));
+        // const logoutBtn = document.getElementById("logoutBtn");
+        // ✅ Show Username & Email if available
 
-      if (userData && displayUsername && displayEmail) {
-        displayUsername.textContent = userData.username;
-        displayEmail.textContent = userData.email;
-      }
+        if (logoutBtn) {
+          logoutBtn.addEventListener("click", () => {
+            localStorage.removeItem("userData");
+            window.location.href = "login.html";
+          });
+        }
+      })
+      .catch((err) => console.error("Failed to load navbar:", err));
+  } else {
+    console.warn("No #navbar container found on this page.");
+  }
 
-      if (logoutBtn) {
-        logoutBtn.addEventListener("click", () => {
-          localStorage.removeItem("userData");
-          window.location.href = "login.html";
-        });
-      }
-    })
-    .catch((err) => console.error("Failed to load navbar:", err));
-
-  // ✅ Hero Section Background Slider (works even if navbar fails to load)
+  // ✅ Hero Section Background Slider
   const hero = document.getElementById("hero");
   if (hero) {
     const images = [
@@ -114,11 +112,11 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     // Preload images
-  images.forEach(src => {
-    const img = new Image();
-    img.src = src;
-  });
-    
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+
     let index = 0;
     setInterval(() => {
       index = (index + 1) % images.length;
@@ -126,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 5000);
   }
 
-  // ✅ Always set background colors (no scroll logic)
+  // ✅ Always set background colors
   const topNav = document.getElementById("topNav");
   const mainNav = document.getElementById("mainNav");
 
@@ -141,9 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// ✅ Function for Mobile Sidebar Submenus (still works globally)
+// ✅ Global Function for Mobile Sidebar Submenus
 function toggleSubmenu(id) {
   const submenu = document.getElementById(id);
   if (submenu) submenu.classList.toggle("hidden");
 }
-
